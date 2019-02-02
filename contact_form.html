@@ -1,3 +1,5 @@
+<html>
+  <head>
 <style>
 form {
   margin: 0 auto;
@@ -26,6 +28,7 @@ input, textarea {
   box-sizing: border-box;
 
   border: 1px solid #999;
+  vertical-align: top;
 }
 
 input:focus, textarea:focus {
@@ -38,21 +41,20 @@ textarea {
   height: 5em;
 }
 
-.button {
-  padding-left: 90px; 
-}
-
 button {
-  margin-left: .5em;
+  padding: 10px 28px;
 }
-
-body {
+button {
+  margin-left: 8.5em;
+}
+body{
   background-color: #38414e;
+
 }
 </style>
-</form>
-
-<form action="/get-housing-info" method="post">
+  </head>
+  <body>
+    <form>
   <div>
     <label for="name">Name:</label>
     <input type="text" id="name" name="user_name">
@@ -62,19 +64,24 @@ body {
     <input type="email" id="mail" name="user_mail">
   </div>
   <div>
-    <label for="beds">Number of beds:</label>
-    <input type="text" id = "beds" name = "user_beds">
+    <label>Select one:</label>
+    <select>
+      <option>Private host</option>
+      <option>Organization</option>
+      <option>User</option>
+    </select>
   </div>
   <div>
-    <label for = "location">Location:</label>
-    <input type="text" id = "location" name = "user_location">
+    <label>Comments</label>
+    <textarea cols = "39" rows = "50"  id = "txtbox" name = "user_comment" style = "height:500px;"></textarea>
   </div>
   <div>
-    <label for = "phone">Phone number:</label>
-    <input type = "text" id = "phone" name = "user_phone">
-  </div>
-  <div class="button">
    <button type="submit">Submit your information</button>
   </div>  
+  <div> 
+    <button id = "myButton" >Clear</button>
+  </div>
 </form>
-
+<script src="clear.js"></script>
+  </body>
+</html>

@@ -5,6 +5,7 @@ form {
   padding: 1em;
   border: 1px solid #CCC;
   border-radius: 1em;
+  background-color: #ffffff;
   
 }
 
@@ -44,6 +45,8 @@ textarea {
 button {
   margin-left: .5em;
 }
+body{
+  background-color: #38414e;
 </style>
 </form>
 
@@ -68,8 +71,15 @@ button {
     <label for = "phone">Phone number:</label>
     <input type = "text" id = "phone" name = "user_phone">
   </div>
+  <div>
+    <label for = "contact">Contact:</label>
+    <input type = "text" id = "contact" name = "user_contact">
+  </div>
   <div class="button">
    <button type="submit">Submit your information</button>
+  </div>  
+  <div class="button">
+    <button type="button" onClick=clear.js>Clear</button>
   </div>  
 </form>
 
