@@ -92,23 +92,73 @@ function initMap() {
     // new map
     map = new google.maps.Map(document.getElementById('map'), options);
 
-    // add marker variable
+    //marker lat and longitude
     var queenSpadinaMedCentre = {lat: 43.648640, lng: -79.397209};
+    var stFelix = {lat: 43.649100, lng: -79.399492};
+    var stPats = {lat: 43.6548, lng: -79.3914};
+    var evaPheonix = {lat: 43.647074, lng: -79.398691};
+    
+
+    // add marker variable
+    var felixMark = new google.maps.Marker({
+        position: stFelix,
+        map: map,
+        icon: 'images/nonprofit.png'
+    })
 
     var QSMC = new google.maps.Marker({
         position: queenSpadinaMedCentre,
         map: map,
-        icon: 'images/shelter.png'
+        icon: 'images/medicine.png'
     });
 
-    var infoWindow = new google.maps.InfoWindow({
-        content:'<h2>Queen and Spadina Medical Center</h2><br>Beds Available: 3<br>Contact: 647 836 3392',
+    var stPatsMark = new google.maps.Marker({
+      position: stPats,
+      map: map,
+      icon: 'images/church.png'
     });
 
+    var evaPheonixMark = new google.maps.Marker({
+      position: evaPheonix,
+      map: map,
+      icon: 'images/shelter.png'
+    });
+
+    //pop up info window
+    var infoFelix = new google.maps.InfoWindow({
+      content:
+        '<h2>St Felix</h2><br>Beds Available: 3<br>Contact: 647 836 3392<br><button>Reserve</button>'
+    });
+    var infoQSMC = new google.maps.InfoWindow({
+        content:'<h2>Queen and Spadina Medical Center</h2><br>Beds Available: 3<br>Contact: 647 836 3392<br><button>Reserve</button>',
+    });
+
+    var infoStPats = new google.maps.InfoWindow({
+      content: '<h2>St Patricks Church</h2><br>Beds Available: 15<br>Contact: 647 836 3392<br><button>Reserve</button>'
+    });
+    var infoEvaPheonix = new google.maps.InfoWindow({
+      content: '<h2>Evas Pheonix</h2><br>Beds Available: 1<br>Contact: 647 836 3392<br>Restriction: Ages 16-24<br><button>Reserve</button>'
+    });
+
+  
+    //add event listener for pop-up
     QSMC.addListener('click', function(){
-        infoWindow.open(map, QSMC);
+        infoQSMC.open(map, QSMC);
+    });
+
+    felixMark.addListener('click', function(){
+      infoFelix.open(map, felixMark);
+    });
+
+    stPatsMark.addListener('click', function(){
+      infoStPats.open(map, stPatsMark);
+    });
+
+    evaPheonixMark.addListener('click', function(){
+      infoEvaPheonix.open(map, evaPheonixMark);
     });
 }
+
 
 
 
