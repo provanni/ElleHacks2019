@@ -1,0 +1,78 @@
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+#map {
+    height: 80%;
+    width: 100%;
+    
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;    
+    background-color: #38414e;
+}
+
+.container-fluid {
+    height: 100%;
+    margin : 0;
+    transition: margin-left .5s;
+    padding: 0;
+}
+/* .container{
+    text-align: center;
+    z-index: 1;
+} */
+
+#sideMenu {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    background-color: lightslategrey;
+    right:-200px;
+    transition: all 0.5s linear;
+    z-index: 1;
+}
+
+#sideMenu.active {
+    right:0px;
+}
+
+#sideMenu ul {
+    font-size: 24px;
+    padding-left: 0;
+    margin-top: 0;
+}
+
+.menu-item {
+    color: black;
+    padding: 20px;
+    list-style: none;
+    font-size: 20px;
+    text-align: center;
+}
+
+#sideMenu ul li a{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#sideMenu ul li a:hover {
+    color:#ff7e1c;
+    font-weight: bold;
+}
+
+#sideMenu .toggle-btn {
+    position: absolute;
+    right: 230px;
+    top: 10px;
+}
+
+#sideMenu .toggle-btn span {
+    display: block;
+    width: 30px;
+    height: 5px;
+    margin: 3px 0px;
+    transition: 0.4s;
+}

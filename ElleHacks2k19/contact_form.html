@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/enter_person.css">
+  </head>
+  <body>
+    <div id="sideMenu">
+      <div class="toggle-btn" onclick="toggleSideMenu()">
+        <i class="fa fa-home" aria-hidden="true" style="font-size:xx-large;color:white;"></i>
+      </div>
+      <ul style="font-size:16px;">
+        <li class="menu-item"><a href="index.html">Home</a></li>
+        <li class="menu-item"><a href="contact_form.html">Contact</a></li>
+        <li class="menu-item"><a href="about.html">About</a></li>
+        <li class="dropdown menu-item">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign Up <span class="caret"></span></a>
+            <ul class="dropdown-menu" style="text-align:left;font-size: 20px;">
+              <li><a href="enter_organization.html">Organization</a></li>
+              <li><a href="enter_person.html">Individual</a></li>
+            </ul>
+        </li>
+      </ul>
+      </div>
+    <div>
+    <div class="container-fluid">
+      <div id="logoBox"><a href="index.html"><img src="TOshelter7.png"></a><h2 style="text-align:center;color:white;margin-bottom:15px;">CONTACT US</h2></div>
+    <div class="formBox">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="nameContact" name="user_name">
+      </div>
+    <div>
+      <label for="mail">E-mail:</label>
+      <input type="email" id="mailContact" name="user_mail">
+    </div>
+    <div>
+      <label>Select one:</label>
+      <select>
+        <option>Private host</option>
+        <option>Organization</option>
+        <option>User</option>
+      </select>
+    </div>
+    <div>
+      <label>Comments:</label>
+      <textarea rows = "50"  id = "textboxContact" name = "user_comment" style = "height:300px;"></textarea>
+    </div>
+    <div style="text-align:center;">
+      <button class="btn btn-default" id="submitContactForm" style="margin-right:10px;" onclick="submitContactForm()">Submit</button> 
+      <button class="btn btn-default" id="clearContactForm" onClick="clearText()">Clear</button>
+    </div>  
+  </div>
+  </div>
+
+  <div class="container">
+    <div class="modal fade" id="msgModal" role="dialog">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="width:100%;">
+          <div class="modal-header cent modal-custom">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <p> Message </p>
+          </div>
+          <div class="modal-body cent">
+            <p>Your contact form has been successfully submitted!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function clearText(){
+      document.getElementById("nameContact").innerHTML = "";
+      document.getElementById("mailContact").innerHTML = "";
+      document.getElementById("textboxContact").value = "";
+    }
+
+    function toggleSideMenu() {
+      document.getElementById("sideMenu").classList.toggle('active');
+    }
+
+    function submitContactForm() {
+      console.log("yes");
+      $('#msgModal').modal('show');
+    }
+  </script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/enter_person.css">
+  </head>
+
+  <body>
+    <div id="sideMenu">
+      <div class="toggle-btn" onclick="toggleSideMenu()">
+        <i class="fa fa-home" aria-hidden="true" style="font-size:xx-large;color:white;"></i>
+      </div>
+      <ul>
+        <li class="menu-item"><a href="index.html">Home</a></li>
+        <li class="menu-item"><a href="contact_form.html">Contact</a></li>
+        <li class="menu-item"><a href="about.html">About</a></li>
+        <li class="dropdown menu-item">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign Up <span class="caret"></span></a>
+            <ul class="dropdown-menu" style="text-align:left;font-size: 20px;">
+              <li><a href="enter_organization.html">Organization</a></li>
+              <li><a href="enter_person.html">Individual</a></li>
+            </ul>
+        </li>
+      </ul>
+      </div>
+    <div>
+    <div class="container-fluid">
+        <div id="logoBox"><a href="index.html"><img src="TOshelter7.png"></a><h2 style="text-align:center;color:white;margin-bottom:15px;">Sign Up As An Individual</h2></div>
+        <div class="formBox">
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" id="namePerson" name="user_name">
+          </div>
+          <div>
+            <label for="mail">E-mail:</label>
+            <input type="email" id="mailPerson" name="user_mail">
+          </div>
+          <div>
+            <label for="beds">Number of beds:</label>
+            <input type="text" id = "bedsPerson" name = "user_beds">
+          </div>
+          <div>
+            <label for = "location">Location:</label>
+            <input type="text" id = "locationPerson" name = "user_location">
+          </div>
+          <div>
+            <label for = "phone">Phone number:</label>
+            <input type = "text" id = "phonePerson" name = "user_phone">
+          </div>
+          <div style="text-align:center;">
+              <button class="btn btn-default" id="submipersontForm">Submit</button> 
+              <button class="btn btn-default" id="clearpersonForm" onClick="clearText()">Clear</button>
+          </div> 
+        </div>
+    </div>
+
+    <script>
+        function clearText(){
+          document.getElementById("namePerson").innerHTML = "";
+          document.getElementById("mailPerson").innerHTML = "";
+          document.getElementById("mailPerson").innerHTML = "";
+          document.getElementById("locationPerson").innerHTML = "";
+          document.getElementById("phonePerson").innerHTML = "";
+        }
+    
+        function toggleSideMenu() {
+          document.getElementById("sideMenu").classList.toggle('active');
+        }
+    </script>
+  </body>
+</html>
+
+

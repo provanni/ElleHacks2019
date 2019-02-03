@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>About</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/about.css">
+  </head>
+
+  <body>
+    <div id="sideMenu">
+      <div class="toggle-btn" onclick="toggleSideMenu()">
+        <a href="#"><i class="fa fa-home" aria-hidden="true" style="font-size:xx-large;color:white;opacity:1;"></i></a>
+      </div>
+      <ul>
+        <li class="menu-item"><a href="index.html">Home</a></li>
+        <li class="menu-item"><a href="contact_form.html">Contact</a></li>
+        <li class="menu-item"><a href="about.html">About</a></li>
+        <li class="dropdown menu-item">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign up <span class="caret"></span></a>
+            <ul class="dropdown-menu" style="text-align:left;font-size:20px;">
+              <li><a href="enter_organization.html">Organization</a></li>
+              <li><a href="enter_person.html">Individual</a></li>
+            </ul>
+          </li>
+      </ul >
+    </div>
+    <div class="container-fluid" style="padding-bottom:30px;">
+        <div id="logoBox"><a href="index.html"><img src="TOshelter7.png"></a>
+<h1>Who, What and Why</h1>
+</p>
+<hr>
+
+<h2>Why is this necessary?</h2>
+<div class="container">
+<div class="row">
+  <div class="col-md-7">
+  <img src="barchart.png" alt="Barchart of average numbers using shelters 2016-2018">
+  </div>
+  <div class="col-md-3" style="padding-top:60px;padding-left:60px;">
+  <p id="p1"> As the graph on left shows, homelessness has increased significantly in the city in the past two years.
+    Insitutions such as home shelters, churches, hospitals, community centers and more have
+    been providing services to provide beds to get individuals off the streets. However, there is a need to organize
+    intercommunication between institutions.</p>
+  </div>
+</div>
+</div>
+
+<h2>Our Purpose</h2>
+<p>Our purpose is centered around helping those individuals in Toronto who don’t have a place to stay.
+  We present a platform allowing those in need to easily access a database of information regarding surrounding shelters. 
+  Our goal is to provide a safe space for those in need, especially during extreme weather conditions. We wanted to create
+  a platform to connect different institutions that already provide these services, along with other individuals willing
+  to help, in order to provide easily accessible beds.</p>
+
+<h2>Who does this benefit?</h2>
+<ul id="accessSection">
+  <li>Individuals in need of a bed</li>
+  <li>Hospital staffs</li>
+  <li>Housing shelter workers</li>
+  <li>Churches</li>
+  <li>Community members</li>
+</ul>
+</div>
+  <script>
+    function toggleSideMenu() {
+    document.getElementById("sideMenu").classList.toggle('active');
+  }
+</script>
+  </body>
+</html>
