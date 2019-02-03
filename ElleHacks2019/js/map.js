@@ -97,14 +97,21 @@ function initMap() {
     var stFelix = {lat: 43.649100, lng: -79.399492};
     var stPats = {lat: 43.6548, lng: -79.3914};
     var evaPheonix = {lat: 43.647074, lng: -79.398691};
-    
+    var vanaulyYMCA = {lat: 43.649094, lng: -79.398431};
+    var assessementReferralCentre = {lat: 43.648835, lng: -79.393290};
+    var communityHome = {lat: 43.647136, lng: -79.400418};
+    var communityHomeRobinson = {lat: 43.649065, lng: -79.406911};
+    var communityHomeStephanie = {lat:43.651512, lng:-79.392248};
+
+
+
 
     // add marker variable
     var felixMark = new google.maps.Marker({
         position: stFelix,
         map: map,
         icon: 'images/nonprofit.png'
-    })
+    });
 
     var QSMC = new google.maps.Marker({
         position: queenSpadinaMedCentre,
@@ -123,24 +130,76 @@ function initMap() {
       map: map,
       icon: 'images/shelter.png'
     });
+    var vanYmcaMark = new google.maps.Marker({
+      position: vanaulyYMCA,
+      map: map,
+      icon: 'images/nonprofit.png'
+    });
+
+  var vanAssessReferMark = new google.maps.Marker({
+      position: assessementReferralCentre,
+      map: map,
+      icon: 'images/shelter.png'
+  });
+
+  var communityHomeMark = new google.maps.Marker({
+    position: communityHome,
+    map: map,
+    icon: 'images/bed.png'
+  });
+
+  var robinsonsCHMark = new google.maps.Marker({
+    position: communityHomeRobinson,
+    map: map,
+    icon: 'images/bed.png'
+  });
+  var stephanieCHMark = new google.maps.Marker({
+    position: communityHomeStephanie,
+    map:map,
+    icon: 'images/bed.png'
+  });
+
 
     //pop up info window
     var infoFelix = new google.maps.InfoWindow({
       content:
-        '<h2>St Felix</h2><br>Beds Available: 3<br>Contact: 647 836 3392<br><button>Reserve</button>'
+      '<h2>St Felix</h2><br>25 Augusta Ave<br>Beds Available: 3<br>Contact: 416-203-1624<br><button>Reserve</button>'
     });
     var infoQSMC = new google.maps.InfoWindow({
-        content:'<h2>Queen and Spadina Medical Center</h2><br>Beds Available: 3<br>Contact: 647 836 3392<br><button>Reserve</button>',
+      content:'<h2>Queen and Spadina Medical Center</h2><br>455 Queen Street West <br> Beds Available: MEDICAL CENTRE<br>Contact: 416-869-3627 <br><button>Reserve</button>',
     });
 
     var infoStPats = new google.maps.InfoWindow({
-      content: '<h2>St Patricks Church</h2><br>Beds Available: 15<br>Contact: 647 836 3392<br><button>Reserve</button>'
+      content: '<h2>St Patricks Church</h2>131 McCaul Street<br>Beds Available: 1<br>Contact: 416-598-3269<br><button>Reserve</button>'
     });
     var infoEvaPheonix = new google.maps.InfoWindow({
-      content: '<h2>Evas Pheonix</h2><br>Beds Available: 1<br>Contact: 647 836 3392<br>Restriction: Ages 16-24<br><button>Reserve</button>'
+      content: '<h2>Evas Pheonix</h2><br>60 Brant Street <br> Beds Available: 1<br>Contact: 416-364-4716<br>Restriction: Ages 16-24<br><button>Reserve</button>'
+
+    });
+    var infoVanYmca = new google.maps.InfoWindow({
+      content:
+        '<h2>Vanauley YMCA</h2><br>7 Vanauley Street <br> Beds Available: 3<br>Contact: 416-504-9700 <br><button>Reserve</button>',
     });
 
-  
+    var infoAssess = new google.maps.InfoWindow({
+      content:
+      '<h2>Assessement and Rehabilitation Centre</h2><br>129 Peter Street<br>Beds Available: 4<br>Contact: 416-338-4760 <br><button>Reserve</button>'
+    });
+
+    var infoComHome = new google.maps.InfoWindow({
+      content:
+      '<h2>Richmond Street</h2><br>Beds Available: 1<br>Contact: 416-504-9700 <br><button>Reserve</button>'
+    });
+
+    var infoRobHome = new google.maps.InfoWindow({
+      content:
+      '<h2>34 Robinson pl</h2><br>Beds Available: 1<br>Contact: 416-504-9700 <br><button>Reserve</button>'
+    });
+
+    var infoStephHome = new google.maps.InfoWindow({
+      content:
+       '<h2>50 Stephanie Street</h2><br>Beds Available: 1<br>Contact: 416-504-9700 <br><button>Reserve</button>'
+    });
     //add event listener for pop-up
     QSMC.addListener('click', function(){
         infoQSMC.open(map, QSMC);
@@ -157,10 +216,23 @@ function initMap() {
     evaPheonixMark.addListener('click', function(){
       infoEvaPheonix.open(map, evaPheonixMark);
     });
+
+    vanYmcaMark.addListener('click', function(){
+      infoVanYmca.open(map, vanYmcaMark);
+     });
+   vanAssessReferMark.addListener('click', function(){
+     infoAssess.open(map, vanAssessReferMark);
+    });
+
+    communityHomeMark.addListener('click', function(){
+      infoComHome.open(map, communityHomeMark);
+    });
+    robinsonsCHMark.addListener('click', function(){
+      infoRobHome.open(map,robinsonsCHMark);
+    });
+    stephanieCHMark.addListener('click', function(){
+      infoStephHome.open(map, stephanieCHMark);
+    });
 }
 
-
-
-
-
-map.data.loadGeoJson('dataFiles/data.json');
+/*map.data.loadGeoJson('dataFiles/data.json');*/
